@@ -1,6 +1,9 @@
 const https = require('https');
 
+
+
 const sendMessagesWhatsapp = (data) => {
+    const token = process.env.TOKEN ;
     const opts = {
         host:"graph.facebook.com",
         path:"/v19.0/329848156871424/messages",

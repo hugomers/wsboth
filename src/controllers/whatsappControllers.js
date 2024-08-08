@@ -1,8 +1,11 @@
 const Process = require('../shared/proccessMessage')
+
+
 const VerifiToken = (req,res) => {
     try{
+        const tkn = process.env.CHALLENGE ;
         const mode = req.query['hub.mode'];
-        const accessToken = "#130822%Ait**";
+        const accessToken = tkn;
         const token = req.query["hub.verify_token"];
         const challenge = req.query['hub.challenge'];
 
@@ -18,6 +21,7 @@ const VerifiToken = (req,res) => {
         res.status(400).send()
     }
 }
+
 
 const receiptMessage = (req, res) => {
     try{
